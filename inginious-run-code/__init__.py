@@ -22,6 +22,9 @@ class RunCodeProblem(CodeProblem):
 class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):
     """ A displayable match problem """
 
+    def __init__(self, problemid, content, translations, taskfs):
+        super(DisplayableRunCodeProblem, self).__init__(problemid, content, translations, taskfs)
+
     @classmethod
     def get_type_name(cls, language):
         return _("run_code")
