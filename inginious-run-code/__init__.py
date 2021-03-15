@@ -21,8 +21,10 @@ class RunCodeProblem(CodeProblem):
 
 class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):
     """ A displayable match problem """
-    pass
 
+    @classmethod
+    def get_type_name(cls, language):
+        return _("run_code")
 
 class StaticMockPage(INGIniousPage):
     # TODO: Replace by shared static middleware and let webserver serve the files
@@ -31,6 +33,7 @@ class StaticMockPage(INGIniousPage):
 
     def POST(self, path):
         return self.GET(path)
+
 
 def init(plugin_manager, course_factory, client, plugin_config):
     plugin_manager.add_page('/plugins/run_code/static/<path:path>', StaticMockPage.as_view("runcodepage"))
