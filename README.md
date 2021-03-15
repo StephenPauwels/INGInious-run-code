@@ -1,14 +1,14 @@
 # INGInious-extra-test
 
-Adds a problem-type that requires no extra input from students, but uses solutions from previous problems.
+Adds a problemtype that acts the same as the code type, but can be captured differently in the run files.
 
 ## Installing
 
-    pip3 install git+https://github.com/StephenPauwels/INGInious_extra_test.git
+    pip3 install git+https://github.com/StephenPauwels/INGInious_run_code.git
 
 ## Activating
 
 In your ``configuration.yaml`` file, add the following plugin entry:
 
     plugins:
-        - plugin_module: "inginious-extra-test"
+        - plugin_module: "inginious-run-code"
