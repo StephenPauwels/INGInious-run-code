@@ -15,38 +15,38 @@ class RunCodeProblem(CodeProblem):
     """Add a different test set, using code from another problem"""
 
     @classmethod
-    def get_type_name(cls, language):
-        return _("run_code")
+    def get_type(cls):
+        return "run_code"
 
 
-class DisplayableRunCodeProblem(RunCodeProblem, DisplayableProblem):
+class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):
     """ A displayable match problem """
 
-    def __init__(self, problemid, content, translations, taskfs):
-        super(DisplayableRunCodeProblem, self).__init__(problemid, content, translations, taskfs)
+    # def __init__(self, problemid, content, translations, taskfs):
+    #     super(DisplayableRunCodeProblem, self).__init__(problemid, content, translations, taskfs)
 
     @classmethod
-    def get_type_name(cls, language):
+    def get_type(cls, language):
         return _("run_code")
 
-    def adapt_input_for_backend(self, input_data):
-        return input_data
-
-    def show_input(self, template_helper, language, seed):
-        """ Show BasicCodeProblem and derivatives """
-        header = ParsableText(self.gettext(language,self._header), "rst",
-                              translation=self.get_translation_obj(language))
-        return template_helper.render("tasks/code.html", inputId=self.get_id(), header=header,
-                                      lines=8, maxChars=0, language=self._language, optional=self._optional,
-                                      default=self._default)
-
-    @classmethod
-    def show_editbox(cls, template_helper, key, language):
-        return template_helper.render("course_admin/subproblems/code.html", key=key, multiline=True)
-
-    @classmethod
-    def show_editbox_templates(cls, template_helper, key, language):
-        return ""
+    # def adapt_input_for_backend(self, input_data):
+    #     return input_data
+    #
+    # def show_input(self, template_helper, language, seed):
+    #     """ Show BasicCodeProblem and derivatives """
+    #     header = ParsableText(self.gettext(language,self._header), "rst",
+    #                           translation=self.get_translation_obj(language))
+    #     return template_helper.render("tasks/code.html", inputId=self.get_id(), header=header,
+    #                                   lines=8, maxChars=0, language=self._language, optional=self._optional,
+    #                                   default=self._default)
+    #
+    # @classmethod
+    # def show_editbox(cls, template_helper, key, language):
+    #     return template_helper.render("course_admin/subproblems/code.html", key=key, multiline=True)
+    #
+    # @classmethod
+    # def show_editbox_templates(cls, template_helper, key, language):
+    #     return ""
 
 
 class StaticMockPage(INGIniousPage):
