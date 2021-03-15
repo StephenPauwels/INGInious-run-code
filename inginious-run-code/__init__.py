@@ -17,7 +17,6 @@ class RunCodeProblem(CodeProblem):
 
     def __init__(self, problemid, content, translations, taskfs):
         super(CodeProblem, self).__init__(problemid, content, translations, taskfs)
-        self._header = content['header'] if "header" in content else ""
 
 
 class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):

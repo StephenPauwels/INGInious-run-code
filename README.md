@@ -4,7 +4,7 @@ Adds a problemtype that acts the same as the code type, but can be captured diff
 
 ## Installing
 
-    pip3 install git+https://github.com/StephenPauwels/INGInious_run_code.git
+    pip3 install git+https://github.com/StephenPauwels/INGInious-run-code.git
 
 ## Activating
 
