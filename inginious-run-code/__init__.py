@@ -4,26 +4,22 @@ import os
 
 from flask import send_from_directory
 
-from inginious.common.tasks_problems import CodeProblem
 from inginious.frontend.task_problems import DisplayableCodeProblem
 from inginious.frontend.parsable_text import ParsableText
 from inginious.frontend.pages.utils import INGIniousPage
 
 PATH_TO_PLUGIN = os.path.abspath(os.path.dirname(__file__))
 
-class RunCodeProblem(CodeProblem):
-    """Add a different test set, using code from another problem"""
 
-    @classmethod
-    def get_type(cls):
-        return "run_code"
-
-
-class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):
+class DisplayableRunCodeProblem(CodeProblem, DisplayableCodeProblem):
     """ A displayable match problem """
 
     # def __init__(self, problemid, content, translations, taskfs):
     #     super(DisplayableRunCodeProblem, self).__init__(problemid, content, translations, taskfs)
+
+    @classmethod
+    def get_type(cls):
+        return "run_code"
 
     @classmethod
     def get_type_name(cls, language):
