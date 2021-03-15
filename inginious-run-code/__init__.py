@@ -5,7 +5,7 @@ import os
 from flask import send_from_directory
 
 from inginious.common.tasks_problems import CodeProblem
-from inginious.frontend.task_problems import DisplayableCodeProblem
+from inginious.frontend.task_problems import DisplayableProblem
 from inginious.frontend.parsable_text import ParsableText
 from inginious.frontend.pages.utils import INGIniousPage
 
