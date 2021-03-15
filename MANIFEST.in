@@ -1,0 +1,2 @@
+recursive-include inginious-run-code/templates *
+recursive-include inginious-run-code/static *
