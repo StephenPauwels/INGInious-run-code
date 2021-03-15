@@ -10,7 +10,6 @@ from inginious.frontend.parsable_text import ParsableText
 from inginious.frontend.pages.utils import INGIniousPage
 
 PATH_TO_PLUGIN = os.path.abspath(os.path.dirname(__file__))
-PATH_TO_TEMPLATES = os.path.join(PATH_TO_PLUGIN, "templates")
 
 class RunCodeProblem(CodeProblem):
     """Add a different test set, using code from another problem"""
@@ -18,6 +17,7 @@ class RunCodeProblem(CodeProblem):
     @classmethod
     def get_type_name(cls, language):
         return _("run_code")
+
 
 class DisplayableRunCodeProblem(RunCodeProblem, DisplayableProblem):
     """ A displayable match problem """
@@ -47,6 +47,7 @@ class DisplayableRunCodeProblem(RunCodeProblem, DisplayableProblem):
     @classmethod
     def show_editbox_templates(cls, template_helper, key, language):
         return ""
+
 
 class StaticMockPage(INGIniousPage):
     # TODO: Replace by shared static middleware and let webserver serve the files
