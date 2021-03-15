@@ -15,18 +15,13 @@ PATH_TO_TEMPLATES = os.path.join(PATH_TO_PLUGIN, "templates")
 class RunCodeProblem(CodeProblem):
     """Add a different test set, using code from another problem"""
 
-    def __init__(self, problemid, content, translations, taskfs):
-        super(CodeProblem, self).__init__(problemid, content, translations, taskfs)
-
     @classmethod
     def get_type_name(cls, language):
         return _("run_code")
 
 class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):
     """ A displayable match problem """
-
-    def __init__(self, problemid, content, translations, taskfs):
-        super(DisplayableCodeProblem, self).__init__(problemid, content, translations, taskfs)
+    pass
 
 
 class StaticMockPage(INGIniousPage):
