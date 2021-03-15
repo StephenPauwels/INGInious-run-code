@@ -26,7 +26,7 @@ class DisplayableRunCodeProblem(RunCodeProblem, DisplayableCodeProblem):
     #     super(DisplayableRunCodeProblem, self).__init__(problemid, content, translations, taskfs)
 
     @classmethod
-    def get_type(cls, language):
+    def get_type_name(cls, language):
         return _("run_code")
 
     # def adapt_input_for_backend(self, input_data):
